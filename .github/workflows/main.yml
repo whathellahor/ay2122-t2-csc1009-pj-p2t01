@@ -3,7 +3,7 @@
 name: CI-PUSH
 
 # Controls when the workflow will run
-on: [push]
+on: [push, pull_request]
   # Triggers the workflow on push or pull request events but only for the main branch
 
 jobs:
@@ -15,5 +15,5 @@ jobs:
       uses: fateyan/action-discord-notifier@v1.2.0
       with:
         webhook: ${{secrets.DISCORD2_WEBHOOK}}
-        message-title: GITHUB PUSH by ${{github.actor}}
+        message-title: By ${{github.actor}}
     
